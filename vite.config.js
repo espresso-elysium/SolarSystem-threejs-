@@ -9,5 +9,6 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets'
-  }
+  },
+  base: process.env.VITE_BASE_PATH || '/https://github.com/espresso-elysium/SolarSystem-threejs-',
 }) 
