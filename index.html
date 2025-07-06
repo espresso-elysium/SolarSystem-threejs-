@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/png" href="/static/solar-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar System Explorer</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="icon" href="/icon.jpg" type="image/jpg">
+
+</head>
+
+<body>
+  <canvas class="threejs"></canvas>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <h1 class="title">
+        <span class="title-icon">🌌</span>
+        Solar System Explorer
+      </h1>
+      <div class="header-controls">
+        <button class="control-btn" id="resetCamera">
+          <span class="btn-icon">🎯</span>
+          Reset View
+        </button>
+        <button class="control-btn" id="toggleInfo">
+          <span class="btn-icon">ℹ️</span>
+          Info
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Information Panel -->
+  <div class="info-panel" id="infoPanel">
+    <div class="info-header">
+      <h2>Solar System Information</h2>
+      <button class="close-btn" id="closeInfo">×</button>
+    </div>
+    <div class="info-content">
+      <div class="planet-info" id="planetInfo">
+        <h3>Select a planet to view details</h3>
+        <p>Click on any planet in the 3D scene to learn more about it.</p>
+      </div>
+      <div class="controls-info">
+        <h4>Controls</h4>
+        <ul>
+          <li><strong>Mouse:</strong> Rotate camera</li>
+          <li><strong>Scroll:</strong> Zoom in/out</li>
+          <li><strong>Right click:</strong> Pan camera</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Planet Labels -->
+  <div class="planet-labels" id="planetLabels"></div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <h2>Loading Solar System...</h2>
+      <p>Preparing your cosmic journey</p>
+    </div>
+  </div>
+
+  <!-- Speed Controls -->
+  <div class="speed-controls">
+    <div class="speed-slider">
+      <label for="speedControl">Simulation Speed</label>
+      <input type="range" id="speedControl" min="0" max="2" step="0.1" value="1">
+      <span class="speed-value" id="speedValue">1x</span>
+    </div>
+  </div>
+
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
